@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    background-color: #C9A227;
+    color: #1C2620;
+  }
+  :focus-visible {
+    outline: 2px solid #C9A227;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .divisor-varal {
+    position: relative;
+    height: 2px;
+    background-image: repeating-linear-gradient(
+      to right,
+      #2B3A32 0,
+      #2B3A32 6px,
+      transparent 6px,
+      transparent 14px
+    );
+    opacity: 0.35;
+  }
+
+  .cantoneira::before,
+  .cantoneira::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: #C9A227;
+    z-index: 10;
+  }
+  .cantoneira::before {
+    top: -1px;
+    left: -1px;
+    border-top: 3px solid #C9A227;
+    border-left: 3px solid #C9A227;
+  }
+  .cantoneira::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 3px solid #C9A227;
+    border-right: 3px solid #C9A227;
+  }
+}
+
+/* Grade de números da rifa */
+.grade-rifa {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+  gap: 8px;
+}
+
+.numero-rifa {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: var(--font-fraunces);
+  font-size: 0.95rem;
+  border: 1.5px solid #E7E0CE;
+  background: #FBF9F4;
+  color: #1F2620;
+  user-select: none;
+}
+
+.numero-rifa.vendido {
+  background: #B5482E;
+  border-color: #B5482E;
+  color: #FBF9F4;
+}
+
+.numero-rifa.clicavel {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.numero-rifa.clicavel:hover {
+  transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
