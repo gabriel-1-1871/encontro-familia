@@ -14,7 +14,7 @@ export default function Cabecalho({ ativo }) {
     <header className="border-b border-pine/15">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-y-3 px-6 py-5">
         <Link href="/" className="font-display text-lg italic text-pine">
-          Encontro de Família
+          Encontro de Família Martins 2027
         </Link>
         <nav className="flex flex-wrap gap-5 font-body text-sm">
           {itens.map((item) => (

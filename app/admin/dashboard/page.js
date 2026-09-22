@@ -1,3 +1,5 @@
+
+//app/admin/dashboard/page.js
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -885,16 +887,46 @@ function PainelConfig() {
     <form onSubmit={salvar} className="space-y-8">
       <section className="rounded-xl border border-pine/15 bg-white p-6">
         <h2 className="font-display text-lg italic text-pine">Data e local</h2>
+
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <div>
-            <label className="font-body text-sm text-ink/70">Data do encontro</label>
-            <input
-              type="date"
-              value={config.data_evento || ''}
-              onChange={(e) => setConfig({ ...config, data_evento: e.target.value })}
-              className="mt-1 w-full rounded-lg border border-pine/20 px-4 py-2 font-body text-ink outline-none focus:border-gold"
-            />
+          <div className="mt-0 grid gap-4 sm:grid-cols-2">
+            <div>
+              <label className="font-body text-sm text-ink/70">
+                Data de início
+              </label>
+
+              <input
+                type="date"
+                value={config.data_evento || ''}
+                onChange={(e) =>
+                  setConfig({
+                    ...config,
+                    data_evento: e.target.value,
+                  })
+                }
+                className="mt-1 w-full rounded-lg border border-pine/20 px-4 py-2 font-body text-ink outline-none focus:border-gold"
+              />
+            </div>
+
+            <div>
+              <label className="font-body text-sm text-ink/70">
+                Data de término
+              </label>
+
+              <input
+                type="date"
+                value={config.data_fim || ''}
+                onChange={(e) =>
+                  setConfig({
+                    ...config,
+                    data_fim: e.target.value,
+                  })
+                }
+                className="mt-1 w-full rounded-lg border border-pine/20 px-4 py-2 font-body text-ink outline-none focus:border-gold"
+              />
+            </div>
           </div>
+
           <div>
             <label className="font-body text-sm text-ink/70">Endereço da chácara</label>
             <input

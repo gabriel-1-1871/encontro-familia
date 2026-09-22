@@ -1,3 +1,4 @@
+//app/api/config/route.js
 import { NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
 
@@ -58,6 +59,7 @@ export async function PUT(req) {
   // tente sobrescrever colunas fora do esperado.
   const camposPermitidos = [
     'data_evento',
+    'data_fim',
     'endereco_chacara',
     'mapa_embed_url',
     'imagem_mapa_url',
