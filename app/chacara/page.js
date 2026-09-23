@@ -1,5 +1,6 @@
 //app/chacara/page.js
 import Cabecalho from '@/components/Cabecalho'
+import GaleriaChacara from '@/components/GaleriaChacara'
 import Image from 'next/image'
 import { supabasePublico } from '@/lib/supabase'
 
@@ -149,6 +150,10 @@ export default async function Chacara() {
             </div>
           </div>
         </section>
+
+        {/* GALERIA DA CHÁCARA */}
+        <GaleriaChacara />
+
 
         {/* MINI-MAPA */}
         {config?.imagem_mapa_url && (
