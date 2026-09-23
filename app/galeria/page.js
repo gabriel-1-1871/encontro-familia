@@ -31,7 +31,7 @@ export default async function Galeria() {
         </p>
 
         <h1 className="mt-3 font-display text-4xl italic leading-tight text-pine sm:text-5xl">
-          Fotos do encontro
+          recordações da família
         </h1>
 
         <p className="mt-5 font-body text-base leading-relaxed text-ink/70 sm:text-lg">
